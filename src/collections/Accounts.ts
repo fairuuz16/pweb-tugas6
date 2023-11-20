@@ -6,6 +6,9 @@ const Accounts: CollectionConfig = {
   admin: {
     useAsTitle: 'username',
   },
+  access: {
+    create: () => true,
+  },
   fields: [
     {
         name: 'username',
