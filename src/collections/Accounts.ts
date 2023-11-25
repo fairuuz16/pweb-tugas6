@@ -1,4 +1,7 @@
 import { CollectionConfig } from 'payload/types'
+import { selfOrAdmin } from '../access/selfOrAdmin'
+import { adminOnly } from '../access/adminOnly'
+
 
 const Accounts: CollectionConfig = {
   slug: 'accounts',
@@ -8,6 +11,9 @@ const Accounts: CollectionConfig = {
   },
   access: {
     create: () => true,
+    read: selfOrAdmin,
+    update: adminOnly,
+    delete: adminOnly,
   },
   fields: [
     {
